@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import SearchBar from './components/search_bar';
+
+// import dotenv from 'dotenv';
 
 class App extends Component {
   render() {
