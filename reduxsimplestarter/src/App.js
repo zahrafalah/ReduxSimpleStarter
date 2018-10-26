@@ -37,6 +37,8 @@ class App extends Component {
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           videos={this.state.videos}
+          //a func that just updates app states. It takes the video and updates the selected video
+          //we pass this func as a property into video list
           onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
         />
       </div>

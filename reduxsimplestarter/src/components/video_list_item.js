@@ -7,6 +7,9 @@ const VideoListItem = ({ video, onVideoSelect }) => {
   //const video = props.video;
   const imageUrl = video.snippet.thumbnails.default.url;
   return (
+    //videoListItem takes the property of onVideoSelect and says
+    //whenever i get clicked call that function with a video that I was passed
+    //for instance each videoItem has a diff video and it ends up with the current video
     <li onClick={() => onVideoSelect(video)}>
       <div>
         <img src={imageUrl} />
