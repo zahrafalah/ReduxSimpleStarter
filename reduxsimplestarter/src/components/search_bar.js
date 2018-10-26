@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid, Input, Container, GridColumn, GridRow } from 'semantic-ui-react';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -15,13 +16,23 @@ class SearchBar extends Component {
     //or
     // return <input onChange={event => console.log(event.target.value)} />;
     return (
-      <div>
-        <input
-          value={this.state.term}
-          onChange={event => this.setState({ term: event.target.value })}
-        />
-        {/* value of the state : {this.state.term} */}
-      </div>
+      <Container>
+        <Grid textAlign="center">
+          <GridRow>
+            <GridColumn>
+              <Input
+                value={this.state.term}
+                onChange={event => this.setState({ term: event.target.value })}
+                loading
+                icon="user"
+                placeholder="Search..."
+              />
+            </GridColumn>
+          </GridRow>
+        </Grid>
+      </Container>
+
+      //  value of the state : {this.state.term}
     );
   }
 }
