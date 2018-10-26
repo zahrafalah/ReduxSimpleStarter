@@ -7,8 +7,9 @@ const VideoList = props => {
   //and we return a VideoListItem, and we will pass it a video as a property named video
   const videoItems = props.videos.map(video => {
     //
-    return <VideoListItem key={video.etag} video={video} />;
+    return <VideoListItem onVideoSelect={props.onVideoSelect} key={video.etag} video={video} />;
   });
+
   //we are using JS variable so we need curly braces
   return <ul>{videoItems}</ul>;
 };

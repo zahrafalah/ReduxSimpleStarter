@@ -10,13 +10,13 @@ const VideoDetail = ({ video }) => {
   //Or lets use some ES6 magic that would be interpolation method by using back ticks
   const url = `https://www.youtube.com/embed/${videoId}`;
   return (
-    <Card>
+    <li>
       <iframe src={url} />
-      <Card.Content>
-        <Card.Header>{video.snippet.title}</Card.Header>
-        <Card.Description>{video.snippet.description}</Card.Description>
-      </Card.Content>
-    </Card>
+      <div>
+        <div>{video.snippet.title}</div>
+        <div>{video.snippet.description}</div>
+      </div>
+    </li>
   );
 };
 
