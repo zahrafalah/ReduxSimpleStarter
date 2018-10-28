@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image } from 'semantic-ui-react';
+import { Card, Image, List, Grid } from 'semantic-ui-react';
 
 const VideoListItem = ({ video, onVideoSelect }) => {
   console.log(video);
@@ -10,15 +10,18 @@ const VideoListItem = ({ video, onVideoSelect }) => {
     //videoListItem takes the property of onVideoSelect and says
     //whenever i get clicked call that function with a video that I was passed
     //for instance each videoItem has a diff video and it ends up with the current video
-    <li onClick={() => onVideoSelect(video)}>
-      <div>
-        <img src={imageUrl} />
-        <div>
-          <div>{video.snippet.title}</div>
-          <div>{video.snippet.description}</div>
-        </div>
-      </div>
-    </li>
+    <Grid.Column>
+      <Card
+        onClick={() => onVideoSelect(video)}
+        style={{ margin: '2em 0.5em', padding: '1em 1em' }}
+      >
+        <Image src={imageUrl} />
+        <Card.Content>
+          <Card.Header>{video.snippet.title}</Card.Header>
+          {/* <Card.Description>{video.snippet.description}</Card.Description> */}
+        </Card.Content>
+      </Card>
+    </Grid.Column>
   );
 };
 

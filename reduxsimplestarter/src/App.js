@@ -4,6 +4,7 @@ import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 import YTSearch from 'youtube-api-search';
+import { Grid, Container, Segment, GridRow } from 'semantic-ui-react';
 
 const API_KEY = 'AIzaSyC4f-CdOH7kwmwpg3LsjPVgiWCyyMx95KU';
 //call to YouTube API to call to get some info,
@@ -32,17 +33,35 @@ class App extends Component {
   render() {
     console.log(this.state);
     return (
-      <div>
-        <SearchBar />
+      <Container>
+        <Segment style={{ padding: '4em 0em' }} vertical>
+          <Grid container stackable verticalAlign="middle">
+            <Grid.Row>
+              <Grid.Column textAlign="center">
+                <SearchBar />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
         {/* <VideoDetail video={this.state.videos[0]} /> */}
-        <VideoDetail video={this.state.selectedVideo} />
-        <VideoList
-          videos={this.state.videos}
-          //a func that just updates app states. It takes the video and updates the selected video
-          //we pass this func as a property into video list
-          onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
-        />
-      </div>
+        <Segment style={{ padding: '4em 0em' }}>
+          <Grid container verticalAlign="middle">
+            <Grid.Row>
+              <Grid.Column width={10}>
+                <VideoDetail video={this.state.selectedVideo} />
+              </Grid.Column>
+              <Grid.Column width={4}>
+                <VideoList
+                  videos={this.state.videos}
+                  //a func that just updates app states. It takes the video and updates the selected video
+                  //we pass this func as a property into video list
+                  onVideoSelect={selectedVideo => this.setState({ selectedVideo })}
+                />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </Segment>
+      </Container>
     );
   }
 }

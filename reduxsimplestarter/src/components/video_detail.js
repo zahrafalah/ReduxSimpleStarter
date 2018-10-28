@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from 'semantic-ui-react';
+import { Card, Grid } from 'semantic-ui-react';
 
 const VideoDetail = ({ video }) => {
   if (!video) {
@@ -11,11 +11,11 @@ const VideoDetail = ({ video }) => {
   const url = `https://www.youtube.com/embed/${videoId}`;
   return (
     <div>
-      <iframe src={url} />
       <div>
-        <div>{video.snippet.title}</div>
-        <div>{video.snippet.description}</div>
+        <iframe src={url} />
       </div>
+      <div>{video.snippet.title}</div>
+      <div>{video.snippet.description}</div>
     </div>
   );
 };

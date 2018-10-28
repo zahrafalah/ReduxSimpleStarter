@@ -16,21 +16,13 @@ class SearchBar extends Component {
     //or
     // return <input onChange={event => console.log(event.target.value)} />;
     return (
-      <Container>
-        <Grid textAlign="center">
-          <GridRow>
-            <GridColumn>
-              <Input
-                value={this.state.term}
-                onChange={event => this.setState({ term: event.target.value })}
-                loading
-                icon="user"
-                placeholder="Search..."
-              />
-            </GridColumn>
-          </GridRow>
-        </Grid>
-      </Container>
+      <Input
+        value={this.state.term}
+        onChange={event => this.setState({ term: event.target.value })}
+        loading
+        icon="user"
+        placeholder="Search..."
+      />
 
       //  value of the state : {this.state.term}
     );

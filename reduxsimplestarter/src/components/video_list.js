@@ -1,5 +1,6 @@
 import React from 'react';
 import VideoListItem from './video_list_item';
+import { Grid, GridRow } from 'semantic-ui-react';
 
 const VideoList = props => {
   //loop through the array of videos coming from API
