@@ -1,4 +1,4 @@
 # YouTuPia
-A video player( Model of YouTube ) built with React and Redux using the actual YouTube API.
+A full screen search base video player( Model of YouTube ) built with React and Redux using the actual YouTube API.
 
 https://console.developers.google.com 

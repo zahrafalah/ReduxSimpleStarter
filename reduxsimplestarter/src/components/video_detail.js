@@ -18,7 +18,7 @@ const VideoDetail = ({ video }) => {
     <Segment style={{ padding: '2em 2em' }}>
       <Grid>
         <Grid.Row>
-          <iframe src={url} style={iframeStyle} />
+          <iframe src={url} style={iframeStyle} allowfullscreen="true" />
         </Grid.Row>
         <Grid.Row>
           <Header>{video.snippet.title}</Header>
