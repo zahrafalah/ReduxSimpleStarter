@@ -34,23 +34,23 @@ class App extends Component {
     console.log(this.state);
     return (
       <Container>
-        <Segment style={{ padding: '4em 0em' }} vertical>
-          <Grid container stackable verticalAlign="middle">
+        <Segment style={{ padding: '4em 0em' }}>
+          <Grid container stackable>
             <Grid.Row>
-              <Grid.Column textAlign="center">
+              <Grid.Column textAlign="center" width={16}>
                 <SearchBar />
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Segment>
         {/* <VideoDetail video={this.state.videos[0]} /> */}
-        <Segment style={{ padding: '4em 0em' }}>
-          <Grid container verticalAlign="middle">
+        <Segment style={{ padding: '1em' }}>
+          <Grid container>
             <Grid.Row>
-              <Grid.Column width={10}>
+              <Grid.Column width={11}>
                 <VideoDetail video={this.state.selectedVideo} />
               </Grid.Column>
-              <Grid.Column width={4}>
+              <Grid.Column width={5}>
                 <VideoList
                   videos={this.state.videos}
                   //a func that just updates app states. It takes the video and updates the selected video

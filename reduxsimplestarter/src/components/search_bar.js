@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Input, Container, GridColumn, GridRow } from 'semantic-ui-react';
+import { Grid, Input, Icon, Container, GridColumn, GridRow } from 'semantic-ui-react';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -16,13 +16,20 @@ class SearchBar extends Component {
     //or
     // return <input onChange={event => console.log(event.target.value)} />;
     return (
-      <Input
-        value={this.state.term}
-        onChange={event => this.setState({ term: event.target.value })}
-        loading
-        icon="user"
-        placeholder="Search..."
-      />
+      <Grid>
+        <a>
+          <Icon name="video" />
+          Search Here
+        </a>
+        <h1>YouTuPia</h1>
+        <Input
+          value={this.state.term}
+          onChange={event => this.setState({ term: event.target.value })}
+          loading
+          icon="user"
+          placeholder="Search..."
+        />
+      </Grid>
 
       //  value of the state : {this.state.term}
     );
