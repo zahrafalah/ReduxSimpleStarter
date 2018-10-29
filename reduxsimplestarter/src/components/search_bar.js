@@ -11,6 +11,10 @@ class SearchBar extends Component {
   // handleChange(event) {
   //   console.log(event.target.value);
   // }
+  handleChange(term) {
+    this.setState({ term });
+    this.props.onSearchChange(term);
+  }
   render() {
     // return <input onChange={this.handleChange} />;
     //or
@@ -18,16 +22,16 @@ class SearchBar extends Component {
     return (
       <Grid>
         <a>
-          <Icon name="video" />
-          Search Here
+          <Icon size="large" color="purple" name="video" />
         </a>
-        <h1>YouTuPia</h1>
+        <h>YouTuPia</h>
         <Input
           value={this.state.term}
-          onChange={event => this.setState({ term: event.target.value })}
+          // onChange={event => this.setState({ term: event.target.value })}
+          onChange={event => this.handleChange(event.target.value)}
           loading
           icon="user"
-          placeholder="Search..."
+          placeholder="Search In YouTube ..."
         />
       </Grid>
 

@@ -22,7 +22,17 @@ class App extends Component {
       selectedVideo: null
     };
 
-    YTSearch({ key: API_KEY, term: 'surfboards' }, videos => {
+    // YTSearch({ key: API_KEY, term: 'surfboards' }, videos => {
+    //   this.setState({
+    //     videos: videos,
+    //     selectedVideo: videos[0]
+    //   });
+    // });
+    this.videoSearch('surfboards');
+  }
+
+  videoSearch(term) {
+    YTSearch({ key: API_KEY, term: term }, videos => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -38,7 +48,7 @@ class App extends Component {
           <Grid container stackable>
             <Grid.Row>
               <Grid.Column textAlign="center" width={16}>
-                <SearchBar />
+                <SearchBar onSearchChange={term => this.videoSearch(term)} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
