@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './components/search_bar';
@@ -41,6 +42,11 @@ class App extends Component {
   }
 
   render() {
+    //throttling(controlling) the videoSearch func. _ : means lodash.
+    const videoSearch = _.debounce(term => {
+      this.videoSearch(term);
+    }, 300);
+
     console.log(this.state);
     return (
       <Container>
@@ -49,7 +55,9 @@ class App extends Component {
             <Grid.Row>
               <Grid.Column textAlign="center" width={16}>
                 {/* we passed down the search method to the SearchBar, under the property of onsearchchange() */}
-                <SearchBar onSearchChange={term => this.videoSearch(term)} />
+                {/* <SearchBar onSearchChange={term => this.videoSearch(term)} /> */}
+                {/* in order to use the throttling method: passing the debounce version of the videoSearch */}
+                <SearchBar onSearchChange={videoSearch} />
               </Grid.Column>
             </Grid.Row>
           </Grid>
