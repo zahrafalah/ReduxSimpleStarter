@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, Grid, Segment, Header, HeaderSubHeader } from 'semantic-ui-react';
+import { Grid, Segment, Header } from 'semantic-ui-react';
 
 const iframeStyle = {
   width: '60em',
-  height: '35em'
+  height: '30em'
 };
 
 const VideoDetail = ({ video }) => {
@@ -18,7 +18,7 @@ const VideoDetail = ({ video }) => {
     <Segment style={{ padding: '2em 2em' }}>
       <Grid>
         <Grid.Row>
-          <iframe src={url} style={iframeStyle} allowfullscreen="true" />
+          <iframe src={url} style={iframeStyle} allowFullScreen={true} />
         </Grid.Row>
         <Grid.Row>
           <Header>{video.snippet.title}</Header>

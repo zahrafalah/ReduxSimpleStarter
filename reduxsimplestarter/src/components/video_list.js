@@ -12,7 +12,7 @@ const VideoList = props => {
   });
 
   //we are using JS variable so we need curly braces
-  return <ul>{videoItems}</ul>;
+  return <div>{videoItems}</div>;
 };
 
 export default VideoList;

@@ -1,5 +1,13 @@
 import React from 'react';
-import { Card, Image, List, Grid } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
+
+const aStyle = {
+  fontSize: '1em',
+  fontFamily: 'Lato',
+  color: 'black',
+  fontWeight: '700',
+  lineHeight: '1.28571429em'
+};
 
 const VideoListItem = ({ video, onVideoSelect }) => {
   console.log(video);
@@ -11,11 +19,20 @@ const VideoListItem = ({ video, onVideoSelect }) => {
     //whenever i get clicked call that function with a video that I was passed
     //for instance each videoItem has a diff video and it ends up with the current video
 
-    <Card onClick={() => onVideoSelect(video)} style={{ padding: '1em 1em' }} color="red">
-      <Image centered floated="left" size="small" src={imageUrl} />
-      <Card.Content>
-        <Card.Header>{video.snippet.title}</Card.Header>
-        {/* <Card.Description>{video.snippet.description}</Card.Description> */}
+    <Card onClick={() => onVideoSelect(video)} style={{ padding: '0.5em 0.5em' }} color="red">
+      <Card.Content textAlign="center">
+        <Image
+          centered
+          rounded
+          floated="left"
+          size="tiny"
+          src={imageUrl}
+          style={{ marginRight: '1em' }}
+        />
+        <div style={aStyle}>
+          <Card.Header>{video.snippet.title}</Card.Header>
+          {/* <Card.Description>{video.snippet.description}</Card.Description> */}
+        </div>
       </Card.Content>
     </Card>
   );

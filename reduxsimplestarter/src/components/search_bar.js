@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Input, Icon, Header } from 'semantic-ui-react';
+import { Grid, Input, Icon } from 'semantic-ui-react';
 
 const aStyle = {
   fontSize: '2em',
@@ -18,6 +18,9 @@ class SearchBar extends Component {
   // handleChange(event) {
   //   console.log(event.target.value);
   // }
+  //has two purposes or two function inside of it.
+  // 1 is just setting state for the new term and
+  //2d:it fires of the call back function(onSearchChange func).
   handleChange(term) {
     this.setState({ term });
     this.props.onSearchChange(term);
@@ -45,9 +48,9 @@ class SearchBar extends Component {
             className="search-bar"
             value={this.state.term}
             // onChange={event => this.setState({ term: event.target.value })}
+            //we refactored the onchange event. so whenever the content of the input change now cause the handleChange() with the new input value.
             onChange={event => this.handleChange(event.target.value)}
-            loading
-            icon="user"
+            icon="search"
             placeholder="Search In YouTube ..."
           />
         </Grid.Row>

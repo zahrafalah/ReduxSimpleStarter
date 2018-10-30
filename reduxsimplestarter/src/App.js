@@ -30,7 +30,7 @@ class App extends Component {
     // });
     this.videoSearch('surfboards');
   }
-
+  // We refactored the youtube search into its own method
   videoSearch(term) {
     YTSearch({ key: API_KEY, term: term }, videos => {
       this.setState({
@@ -48,6 +48,7 @@ class App extends Component {
           <Grid container stackable>
             <Grid.Row>
               <Grid.Column textAlign="center" width={16}>
+                {/* we passed down the search method to the SearchBar, under the property of onsearchchange() */}
                 <SearchBar onSearchChange={term => this.videoSearch(term)} />
               </Grid.Column>
             </Grid.Row>
