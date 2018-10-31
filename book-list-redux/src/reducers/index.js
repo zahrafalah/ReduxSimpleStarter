@@ -6,7 +6,8 @@ import BooksReducer from './reducer_books';
 
 const rootReducer = combineReducers({
   //the key to this func is a piece of state called books with the value of a reducer.
-  //we are passing this piece to the combine reducer and asking to actually how to make our apps state
+  //we are passing this piece to the combine reducer and asking to actually how to make our apps .
+  // a key to our 'global application state' called books
   books: BooksReducer
 });
 
