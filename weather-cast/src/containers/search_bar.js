@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Input } from 'semantic-ui-react';
+import { Grid, Input, Form, Button, Segment } from 'semantic-ui-react';
 
 //to create a controlled component we need to set state
 class SearchBar extends Component {
@@ -18,12 +18,19 @@ class SearchBar extends Component {
     return (
       <Grid textAlign="center">
         <Grid.Row>
-          <Input
-            action="Search"
-            placeholder="Search for the weather forecast of your favorite city"
-            value={this.state.term}
-            onChange={this.handleChange}
-          />
+          <Segment inverted>
+            <Form inverted>
+              <Form.Group widths="equal">
+                <Form.Input
+                  fluid
+                  placeholder="Search for the weather forecast of your favorite city"
+                  value={this.state.term}
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Button type="submit">Submit</Button>
+            </Form>
+          </Segment>
         </Grid.Row>
       </Grid>
     );
