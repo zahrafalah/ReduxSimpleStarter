@@ -12,6 +12,7 @@ export function fetchWeather(city) {
   //making Ajax call by axios: take the url above and make a get request.
   //then return it as a promise(request) then pass it to payload
   const request = axios.get(url);
+  console.log('Request:', request);
 
   //An action is an obj that always have a type. but payload is an extra
   //info that always contains more info about that particular action.
