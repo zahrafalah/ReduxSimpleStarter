@@ -7,8 +7,9 @@ https://console.developers.google.com
 # BookList
 A single page app to practice Redux and connect it with React.
 
-#Weather Forecast App
-An API that we can use to grab forecasted weather data in the next five days for a particular cities
+# Weather Forecast
+An app that hooked ReactJS and Redux and using Weather API to grab forecasted weather data in the next five days for a particular cities, and show it in different charts.
+
  https://openweathermap.org/forecast5
 
 
