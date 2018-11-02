@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_KEY = 'd6d81d6eeca4ea40404e55fbb83365c4';
 // URL = 'http://api.openweathermap.org/data/2.5/forecast?appid=' + API_KEY;
 //or
-ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 //Action creators always have to create action that return an object
