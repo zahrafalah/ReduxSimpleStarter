@@ -4,6 +4,16 @@ import { bindActionCreators } from 'redux';
 import { Table } from 'semantic-ui-react';
 
 class WeatherList extends Component {
+  renderWeather(cityData) {
+    const name = cityData.city.name;
+    // const Temperature = cityData.
+    return (
+      <Table.Row key="name">
+        <Table.Cell>{name}</Table.Cell>
+      </Table.Row>
+    );
+  }
+
   render() {
     return (
       <Table inverted>
@@ -17,9 +27,8 @@ class WeatherList extends Component {
         </Table.Header>
 
         <Table.Body>
-          <Table.Row>
-            <Table.Cell />
-          </Table.Row>
+          {this.props.weather.map(this.renderWeather)}
+
           <Table.Row>
             <Table.Cell />
             <Table.Cell />
