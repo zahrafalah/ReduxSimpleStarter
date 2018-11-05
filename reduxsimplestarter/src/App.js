@@ -5,7 +5,7 @@ import SearchBar from './components/search_bar';
 import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 import YTSearch from 'youtube-api-search';
-import { Grid, Container, Segment, GridRow } from 'semantic-ui-react';
+import { Grid, Container, Segment } from 'semantic-ui-react';
 
 const API_KEY = 'AIzaSyC4f-CdOH7kwmwpg3LsjPVgiWCyyMx95KU';
 //call to YouTube API to call to get some info,
