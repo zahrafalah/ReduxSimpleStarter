@@ -2,14 +2,24 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Table } from 'semantic-ui-react';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
 
 class WeatherList extends Component {
+  //cityData is what I chose as name
   renderWeather(cityData) {
     const name = cityData.city.name;
-    // const Temperature = cityData.
+    //list is an array that we need to map through it
+    const temp = cityData.list.map(weather => weather.main.temp);
+    console.log(temp);
+
     return (
-      <Table.Row key="name">
-        <Table.Cell>{name}</Table.Cell>
+      <Table.Row>
+        <Table.Cell key="name">{name}</Table.Cell>
+        <Table.Cell key="name">
+          <Sparklines height={100} width={140} data={temp}>
+            <SparklinesLine color="red" />
+          </Sparklines>
+        </Table.Cell>
       </Table.Row>
     );
   }
