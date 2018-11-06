@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <Container>
         <Segment style={{ padding: '2em 0em' }}>
-          <Grid container stackable>
+          <Grid container>
             <Grid.Row>
               <Grid.Column textAlign="center" width={16}>
                 <SearchBar />
@@ -33,10 +33,3 @@ class App extends Component {
 }
 
 export default App;
-
-{
-  /* <div>
-<SearchBar />
-<WeatherList />
-</div> */
-}

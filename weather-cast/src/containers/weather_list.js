@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import { Table } from 'semantic-ui-react';
-import { Sparklines, SparklinesLine } from 'react-sparklines';
+import Chart from '../components/chart';
 
 class WeatherList extends Component {
   //cityData is what I chose as name
@@ -10,15 +9,21 @@ class WeatherList extends Component {
     const name = cityData.city.name;
     //list is an array that we need to map through it
     const temp = cityData.list.map(weather => weather.main.temp);
-    console.log(temp);
+    const humid = cityData.list.map(weather => weather.main.humidity);
+    const press = cityData.list.map(weather => weather.main.pressure);
+    // console.log(temp);
 
     return (
       <Table.Row>
         <Table.Cell key="name">{name}</Table.Cell>
-        <Table.Cell key="name">
-          <Sparklines height={100} width={140} data={temp}>
-            <SparklinesLine color="red" />
-          </Sparklines>
+        <Table.Cell>
+          <Chart data={temp} color="red" />
+        </Table.Cell>
+        <Table.Cell>
+          <Chart data={press} color="green" />
+        </Table.Cell>
+        <Table.Cell>
+          <Chart data={humid} color="orange" />
         </Table.Cell>
       </Table.Row>
     );
@@ -36,22 +41,10 @@ class WeatherList extends Component {
           </Table.Row>
         </Table.Header>
 
-        <Table.Body>
-          {this.props.weather.map(this.renderWeather)}
-
-          <Table.Row>
-            <Table.Cell />
-            <Table.Cell />
-            <Table.Cell />
-          </Table.Row>
-        </Table.Body>
+        <Table.Body>{this.props.weather.map(this.renderWeather)}</Table.Body>
 
         <Table.Footer>
-          <Table.Row>
-            <Table.HeaderCell />
-            <Table.HeaderCell />
-            <Table.HeaderCell />
-          </Table.Row>
+          <Table.Row />
         </Table.Footer>
       </Table>
     );

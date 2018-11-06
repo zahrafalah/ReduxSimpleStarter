@@ -8,7 +8,7 @@ API: https://console.developers.google.com
 A single page app to practice Redux and connect it with React.
 
 # Weather Forecast
-An app that hooked ReactJS and Redux and using Weather API to grab forecasted weather data in the next five days for a particular cities, and show it in different charts.
+An app that hooks ReactJS and Redux and uses Weather API to grab forecasted weather data in the next five days for a particular city, and shows it in different "Sparklines Charts".
 
  API: https://openweathermap.org/forecast5
 

@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions/index';
-
-import { Grid, Input, Form, Button, Segment } from 'semantic-ui-react';
+import { Grid, Button, Segment, Form, Input } from 'semantic-ui-react';
 
 //to create a controlled component we need to set state
 class SearchBar extends Component {
@@ -32,23 +31,19 @@ class SearchBar extends Component {
   render() {
     return (
       <Grid textAlign="center">
-        <Grid.Row>
-          <Segment inverted>
-            <Form inverted>
-              <Form.Group widths="equal">
-                <Form.Input
-                  fluid
-                  placeholder="Search for the weather forecast of your favorite city"
-                  value={this.state.term}
-                  onChange={this.handleChange}
-                />
-              </Form.Group>
-              <Button type="submit" onClick={this.handleSubmit}>
-                Submit
-              </Button>
-            </Form>
-          </Segment>
-        </Grid.Row>
+        <Input
+          fluid
+          placeholder="Search for the weather forecast of your favorite city"
+          style={{
+            width: '60%',
+            float: 'left'
+          }}
+          value={this.state.term}
+          onChange={this.handleChange}
+        />
+        <Button type="submit" onClick={this.handleSubmit}>
+          Submit
+        </Button>
       </Grid>
     );
   }
