@@ -3,6 +3,8 @@ A single page, full screen, search base video player( Model of YouTube ) built w
 
 API: https://console.developers.google.com 
 
+![Screenshot](YouTuPia.png)
+
 
 # BookList
 A single page app to practice Redux and connect it with React.
@@ -11,5 +13,8 @@ A single page app to practice Redux and connect it with React.
 An app that hooks ReactJS and Redux and uses Weather API to grab real-time forecasted weather data for the next 5 days for a particular city, and shows it in different "Sparklines Charts". Also using Google Maps Integration to show the cities location.
 
  API: https://openweathermap.org/forecast5
+
+ ![Screenshot](WeatherGeek.png)
+
 
 
