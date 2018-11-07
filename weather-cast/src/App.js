@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Segment style={{ padding: '2em 0em' }}>
+        <Segment raised inverted style={{ padding: '2em 2em' }}>
           <Grid container>
             <Grid.Row>
               <Grid.Column textAlign="center" width={16}>
@@ -17,7 +17,7 @@ class App extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
-        <Segment style={{ padding: '1em' }}>
+        <Segment inverted style={{ padding: '1em' }}>
           <Grid container>
             <Grid.Row>
               <Grid.Column textAlign="center" width={16}>

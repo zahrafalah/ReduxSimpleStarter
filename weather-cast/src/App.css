@@ -1,6 +1,13 @@
-.App {
-  text-align: center;
+body {
   background-color: black;
+}
+th,
+td {
+  text-align: center !important;
+}
+
+svg {
+  height: 70px;
 }
 
 .App-logo {
