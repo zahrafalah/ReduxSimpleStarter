@@ -11,19 +11,21 @@ class WeatherList extends Component {
     const temp = cityData.list.map(weather => weather.main.temp);
     const humid = cityData.list.map(weather => weather.main.humidity);
     const press = cityData.list.map(weather => weather.main.pressure);
-    // console.log(temp);
+    console.log(temp);
+    console.log(press);
+    console.log(humid);
 
     return (
       <Table.Row>
         <Table.Cell key="name">{name}</Table.Cell>
         <Table.Cell>
-          <Chart data={temp} color="red" />
+          <Chart data={temp} color="red" units="K" />
         </Table.Cell>
         <Table.Cell>
-          <Chart data={press} color="green" />
+          <Chart data={press} color="green" units="hPa" />
         </Table.Cell>
         <Table.Cell>
-          <Chart data={humid} color="orange" />
+          <Chart data={humid} color="orange" units="%" />
         </Table.Cell>
       </Table.Row>
     );

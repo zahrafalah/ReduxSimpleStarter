@@ -17,7 +17,6 @@ class App extends Component {
             </Grid.Row>
           </Grid>
         </Segment>
-
         <Segment style={{ padding: '1em' }}>
           <Grid container>
             <Grid.Row>
