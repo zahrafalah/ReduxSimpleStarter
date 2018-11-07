@@ -3,7 +3,7 @@ A single page, full screen, search base video player( Model of YouTube ) built w
 
 API: https://console.developers.google.com 
 
-![Screenshot](YouTuPia.png)
+![YouTuPia](https://github.com/zahrafalah/ReduxSimpleStarter/blob/master/YouTuPia.PNG)
 
 
 # BookList
@@ -14,7 +14,7 @@ An app that hooks ReactJS and Redux and uses Weather API to grab real-time forec
 
  API: https://openweathermap.org/forecast5
 
- ![Screenshot](WeatherGeek.png)
+ ![WeatherGeek](https://github.com/zahrafalah/ReduxSimpleStarter/blob/master/WeatherGeek.PNG)
 
 
 
