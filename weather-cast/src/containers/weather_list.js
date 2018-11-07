@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Table } from 'semantic-ui-react';
 import Chart from '../components/chart';
+import GoogleMap from '../components/google_map';
 
 class WeatherList extends Component {
   //cityData is what I chose as name
@@ -11,13 +12,18 @@ class WeatherList extends Component {
     const temp = cityData.list.map(weather => weather.main.temp);
     const humid = cityData.list.map(weather => weather.main.humidity);
     const press = cityData.list.map(weather => weather.main.pressure);
+    const { lon, lat } = cityData.city.coord;
+    console.log(lon);
+
     console.log(temp);
     console.log(press);
     console.log(humid);
 
     return (
-      <Table.Row>
-        <Table.Cell key="name">{name}</Table.Cell>
+      <Table.Row key={name}>
+        <Table.Cell>
+          <GoogleMap lon={lon} lat={lat} />
+        </Table.Cell>
         <Table.Cell>
           <Chart data={temp} color="red" units="K" />
         </Table.Cell>
