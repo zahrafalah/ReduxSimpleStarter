@@ -16,5 +16,8 @@ An app that hooks ReactJS and Redux and uses Weather API to grab real-time forec
 
  ![WeatherGeek](https://github.com/zahrafalah/ReduxSimpleStarter/blob/master/WeatherGeek.PNG)
 
+# ReduxBlog 
+
+React multiple page post app using React-router to navigate and Redux, with the ability to create, delete and render posts.
 
 
