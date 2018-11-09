@@ -20,4 +20,5 @@ An app that hooks ReactJS and Redux and uses Weather API to grab real-time forec
 
 React multiple page post app using React-router to navigate and Redux, with the ability to create, delete and render posts.
 
+ API: http://reduxblog.herokuapp.com/api
 
