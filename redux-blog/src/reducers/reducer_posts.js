@@ -1,6 +1,7 @@
 //we are using lodash lib to transfer the arr of data from payload to an object
-//with key & value based on our needs.[{},{},{}]
+//with key & value based on our needs.[{},{},{}]-->{id:{},id:{},id:{}}
 import _ from 'lodash';
+
 //importing data from action creator
 import { FETCH_POSTS, FETCH_POST, DELETE_POST } from '../actions';
 
