@@ -1,10 +1,12 @@
 //since FETCH_WEATHER is fragile we will import it to make
 //sure any typo would make any problem
 import { FETCH_WEATHER } from '../actions/index';
+
 //because we want to show multiple rows for multiple
 //city at a time we need to store it in an array instead
 // of initialing our state=null.That implies that we need data structure
 // in here, that is going to be list of sorts.
+
 export default function(state = [], action) {
   console.log('Action received', action);
 

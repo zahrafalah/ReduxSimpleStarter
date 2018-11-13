@@ -6,7 +6,7 @@ import _ from 'lodash';
 
 class PostsIndex extends Component {
   componentDidMount() {
-    //this will automatically shows up in console
+    //this will automatically shows up in console as the first log and empty
     this.props.fetchPosts();
   }
 
