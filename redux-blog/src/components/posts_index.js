@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
 import _ from 'lodash';
+//this component act exactly like a classic anchore tag
+import { Link } from 'react-router-dom';
 
 class PostsIndex extends Component {
   componentDidMount() {
@@ -20,6 +22,11 @@ class PostsIndex extends Component {
     console.log(this.props.posts);
     return (
       <div>
+        <div>
+          <Link className="btn btn-primary" to="/posts/new">
+            Add a Post
+          </Link>
+        </div>
         <h3>Posts: </h3>
         <ul>{this.renderPosts()}</ul>
       </div>
