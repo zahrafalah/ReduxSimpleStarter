@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 //Field component is a react component that automatically wires up with reduxForm
 //reduxForm is just a function that acts like a connect func
 import { Field, reduxForm } from 'redux-form';
-import { Button, Message, Form } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { createPost } from '../actions/index';
+import { connect } from 'react-redux';
 
 class PostsNew extends Component {
   //the field obj represent a single input or a single piece of state
   renderField(field) {
+    //This class name is generalized for any conditional styling.If there was err it
+    //will make the field red and will show the err txt. for doing so we need string
+    //template to use ternary expression
     const className = `form ${field.meta.touched && field.meta.error ? 'error' : ''}`;
 
     return (
@@ -15,14 +21,18 @@ class PostsNew extends Component {
           <label>{field.lable}</label>
           <input type="text" {...field.input} />
           {/* Touched: this property means that the input has been selected and been out of focus. */}
+          {/* Ternary expression: */}
           {field.meta.touched ? field.meta.error : ''}
         </Form.Field>
       </Form>
     );
   }
+
   onSubmit(values) {
     //this === component
     console.log(values);
+    //posting a post to the API by calling the action creator
+    this.props.createPost(values);
   }
 
   render() {
@@ -34,10 +44,15 @@ class PostsNew extends Component {
         <Field name="tag" lable="Tag" component={this.renderField} />
         <Field name="content" lable="Content" component={this.renderField} />
         <Button type="submit">Submit</Button>
+        <Button type="">
+          <Link to="/">Cancel</Link>
+        </Button>
       </Form>
     );
   }
 }
+
+//validating the form
 function validate(values) {
   //the err obj starts at completely empty
   const errors = {};
@@ -61,4 +76,9 @@ export default reduxForm({
   //validate: 'validate'
   validate,
   form: 'PostsNewForm'
-})(PostsNew);
+})(
+  connect(
+    null,
+    { createPost }
+  )(PostsNew)
+);

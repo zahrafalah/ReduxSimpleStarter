@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchWeather } from '../actions/index';
-import { Grid, Button, Segment, Form, Input } from 'semantic-ui-react';
+import { Grid, Button, Input } from 'semantic-ui-react';
 
 //to create a controlled component we need to set state
 class SearchBar extends Component {
