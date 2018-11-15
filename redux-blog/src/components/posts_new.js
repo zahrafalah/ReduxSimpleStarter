@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 //Field component is a react component that automatically wires up with reduxForm
 //reduxForm is just a function that acts like a connect func
 import { Field, reduxForm } from 'redux-form';
-import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { Button, Message, Form } from 'semantic-ui-react';
 
 class PostsNew extends Component {
   //the field obj represent a single input or a single piece of state
   renderField(field) {
+    const className = `form ${field.meta.touched && field.meta.error ? 'error' : ''}`;
+
     return (
       <Form>
-        <Form.Field>
+        <Form.Field className={className}>
           <label>{field.lable}</label>
           <input type="text" {...field.input} />
-          {field.meta.error}
+          {/* Touched: this property means that the input has been selected and been out of focus. */}
+          {field.meta.touched ? field.meta.error : ''}
         </Form.Field>
       </Form>
     );
