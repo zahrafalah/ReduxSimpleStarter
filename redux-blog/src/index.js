@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import PostsIndex from './components/posts_index';
-import PostNew from './components/posts_new';
+import PostsNew from './components/posts_new';
 
 //to handle the asynchronous nature of the request itself w need to install promise
 import promise from 'redux-promise';
@@ -18,7 +18,7 @@ ReactDOM.render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path="/posts/new" component={PostNew} />
+          <Route path="/posts/new" component={PostsNew} />
           <Route path="/" component={PostsIndex} />
         </Switch>
       </div>

@@ -23,9 +23,7 @@ class PostsIndex extends Component {
     return (
       <div>
         <div>
-          <Link className="btn btn-primary" to="/posts/new">
-            Add a Post
-          </Link>
+          <Link to="/posts/new">Add a Post</Link>
         </div>
         <h3>Posts: </h3>
         <ul>{this.renderPosts()}</ul>
