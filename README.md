@@ -22,4 +22,4 @@ React multiple page post app using React-router to navigate, Redux & Redux-Form 
 
  API: http://reduxblog.herokuapp.com/api
 
- ![ReduxBlog](https://github.com/zahrafalah/ReduxSimpleStarter/blob/master/SceenShots/2.PNG)
+ ![ReduxBlog](https://github.com/zahrafalah/ReduxSimpleStarter/blob/master/ScreenShots/2.PNG)
