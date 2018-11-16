@@ -3,10 +3,11 @@ import ReactDOM from 'react-dom';
 import reducers from './reducers';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import PostsIndex from './components/posts_index';
-import PostsNew from './components/posts_new';
-import PostsShow from './components/posts_show';
+import App from './App';
+// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import PostsIndex from './components/posts_index';
+// import PostsNew from './components/posts_new';
+// import PostsShow from './components/posts_show';
 
 //to handle the asynchronous nature of the request itself w need to install promise
 import promise from 'redux-promise';
@@ -16,7 +17,8 @@ import * as serviceWorker from './serviceWorker';
 const createStoreWithMiddeleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddeleware(reducers)}>
-    <BrowserRouter>
+    <App />
+    {/* <BrowserRouter>
       <div>
         <Switch>
           <Route path="/posts/new" component={PostsNew} />
@@ -24,7 +26,7 @@ ReactDOM.render(
           <Route path="/" component={PostsIndex} />
         </Switch>
       </div>
-    </BrowserRouter>
+    </BrowserRouter> */}
   </Provider>,
   document.getElementById('root')
 );

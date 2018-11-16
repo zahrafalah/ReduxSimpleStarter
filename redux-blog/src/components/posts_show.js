@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPost, deletePost } from '../actions';
-import { Button, Form } from 'semantic-ui-react';
+import { Button, Grid, Segment, Header } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 class PostsShow extends Component {
@@ -27,13 +27,23 @@ class PostsShow extends Component {
       return <div>Loading...</div>;
     }
     return (
-      <div>
-        <Link to="/">Back To Index</Link>
-        <Button onClick={this.onDeleteClick.bind(this)}>Delete</Button>
-        <h3>{post.title}</h3>
-        <h6>Categories: {post.categories}</h6>
-        <p>{post.content}</p>
-      </div>
+      <Grid container textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
+        <Grid.Column textAlign="center">
+          <Grid.Row>
+            <Segment>
+              <Header>Title: {post.title}</Header>
+              <Header>Tag: {post.categories}</Header>
+              <Header>Content: {post.content}</Header>
+            </Segment>
+            <Segment>
+              <Button>
+                <Link to="/">Back To Index</Link>
+              </Button>
+              <Button onClick={this.onDeleteClick.bind(this)}>Delete</Button>
+            </Segment>
+          </Grid.Row>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

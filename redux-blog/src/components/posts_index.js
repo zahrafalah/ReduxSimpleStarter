@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
 import _ from 'lodash';
-import { Button } from 'semantic-ui-react';
+import { Button, Grid, Header, Segment } from 'semantic-ui-react';
 //this component act exactly like a classic anchore tag
 import { Link } from 'react-router-dom';
 
@@ -16,9 +16,11 @@ class PostsIndex extends Component {
   renderPosts() {
     return _.map(this.props.posts, post => {
       return (
-        <li key={post.id}>
-          <Link to={`/posts/${post.id}`}>{post.title}</Link>
-        </li>
+        <Segment>
+          <Grid.Row key={post.id}>
+            <Link to={`/posts/${post.id}`}>{post.title}</Link>
+          </Grid.Row>
+        </Segment>
       );
     });
   }
@@ -26,14 +28,21 @@ class PostsIndex extends Component {
   render() {
     console.log(this.props.posts);
     return (
-      <div>
-        <Button type="">
-          <Link to="/posts/new">Add a Post</Link>
-        </Button>
-
-        <h3>Posts: </h3>
-        <ul>{this.renderPosts()}</ul>
-      </div>
+      <Grid container textAlign="center" style={{ height: '100%' }} verticalAlign="middle">
+        <Grid.Column textAlign="center">
+          <Grid.Row>
+            <Segment>
+              <Header>Posts: </Header>
+            </Segment>
+            <div>{this.renderPosts()}</div>
+          </Grid.Row>
+          <Grid.Row>
+            <Button type="">
+              <Link to="/posts/new">Add a new Post</Link>
+            </Button>
+          </Grid.Row>
+        </Grid.Column>
+      </Grid>
     );
   }
 }

@@ -46,7 +46,7 @@ class PostsNew extends Component {
       <Form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         {/* here we need a component */}
         <Field name="title" lable="Title" component={this.renderField} />
-        <Field name="tag" lable="Tag" component={this.renderField} />
+        <Field name="categories" lable="Categories" component={this.renderField} />
         <Field name="content" lable="Content" component={this.renderField} />
         <Button type="submit">Submit</Button>
         <Button type="">
@@ -66,8 +66,8 @@ function validate(values) {
   if (!values.title) {
     errors.title = 'Enter a valid value!';
   }
-  if (!values.tag) {
-    errors.tag = 'Enter a valid value!';
+  if (!values.categories) {
+    errors.categories = 'Enter a valid value!';
   }
   if (!values.content) {
     errors.content = 'Enter a valid value!';
