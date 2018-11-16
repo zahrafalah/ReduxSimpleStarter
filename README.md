@@ -3,7 +3,7 @@ A single page, full screen, search base video player( Model of YouTube ) built w
 
 API: https://console.developers.google.com 
 
-![YouTuPia](https://github.com/zahrafalah/ReduxSimpleStarter/ScreenShots/YouTuPia.PNG)
+![YouTuPia](https://github.com/zahrafalah/ReduxSimpleStarter/blob/master/ScreenShots/YouTuPia.PNG)
 
 
 # BookList
@@ -14,7 +14,7 @@ An app that hooks ReactJS and Redux and uses Weather API to grab real-time forec
 
  API: https://openweathermap.org/forecast5
 
- ![WeatherGeek](https://github.com/zahrafalah/ReduxSimpleStarter/ScreenShots/WeatherGeek.PNG)
+ ![WeatherGeek](https://github.com/zahrafalah/ReduxSimpleStarter/blob/master/ScreenShots/WeatherGeek.PNG)
 
 # ReduxBlog 
 
@@ -22,4 +22,4 @@ React multiple page post app using React-router to navigate, Redux & Redux-Form 
 
  API: http://reduxblog.herokuapp.com/api
 
- ![ReduxBlog](https://github.com/zahrafalah/ReduxSimpleStarter/ScreenShots/2.PNG)
+ ![ReduxBlog](https://github.com/zahrafalah/ReduxSimpleStarter/blob/master/SceenShots/2.PNG)
